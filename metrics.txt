@@ -1,4 +1,0 @@
-tsimTotal : promedio : min : max 
- memUsed: promedio : min : max 
-2687416 : 244311 : 235938 : 250040 
-  370248 : 33658.90 : 33528: 33708 
