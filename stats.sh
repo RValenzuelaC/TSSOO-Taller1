@@ -51,7 +51,7 @@ do
                                                                                             } \
                                                                                                  END { print total, total/count, min, max}')
 
-	valorMem=$(cat $i | tail -n+2 | awk -F ':' 'BEGIN{sumMem=0}{sumMem=$10;} END{print sumMem}')
+	valorMem=$(cat $i | tail -n+2 | awk -F ':' 'BEGIN{sumMem=0}{sumMem=$9;} END{print sumMem}')
 	printf "$valorMem \n" >> $tmp2
 	valorMem_pmm=$(cat $tmp2 | awk 'BEGIN{ min=2**63-1; max=0}{if($tmp2<min){min=$tmp2};\
 												  if($tmp2>max){max=$tmp2};\
