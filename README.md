@@ -40,3 +40,24 @@ El comando `cat` se utilizó principalmente para concatenar los datos del archiv
 Una vez concluido esta parte, los datos obtenidos se guardaran en un archivo llamado `metrics.txt`
 
 #### 2.3 Problema 2
+Para este problema igual que el anterior al haber encontrado el archivo correspondiente, se creo un bucle para recorrer el contenido del archivo, en el caso de este problema se calculará la suma total de tipo de personas simuladas, además de su respectivo promedio, mínimo y máximo. 
+Para la primera parte de este problema si utilizará una variable temporal `tmp3` en la cual se guardarán los datos para luego recorrer esta y obtener el total de personas, además del promedio, mínimo y máximo.
+Esto se puede ver en el siguiente fragmento de codigo:
+```
+personasT=$(cat $i | tail -n+2 | awk -F ':' 'BEGIN{pSum=0}{pSum+=$8}END{print pSum}' )
+        printf "$personasT \n" >> $tmp3
+        personas_pmm=$(cat $tmp3 | awk 'BEGIN{ min=2**63-1; max=0}{ if($tmp3<min){min=$tmp3};\
+                                                                                                  if($tmp3>max){max=$tmp3};\
+                                                                                                  total+=$tmp3; count+=1;\
+                                                                                            } \
+                                                                                                 END { print total, total/count, min, max}')
+```
+Al igual que el problema 1 el comando `cat` se utilizó para concatenar los datos pero en cambio se utilizó el comando `tail` para obtener el los datos que estuvieran debajo de la cabezerá, y en el comando `awk` procesará los datos respectivos al calculo además de usar `-F ':' `  para tomar el octavo numero que este separado por ":".
+
+En este problema, que requiere obtener el dato de cada tipo de persona, se hará el mismo pasó anterior cambiando el parametro por el consecuente al tipo de persona solicitada.
+Ya obteniendo el resultado, este se guardará en un archivo llamado `evacuation.txt`
+
+
+
+
+
