@@ -252,3 +252,9 @@ for i in ${usePhoneFiles[*]};
 
 }
 
+if [ -d $dataIn ]; then
+        execution
+        summary
+        usephone
+fi
+
