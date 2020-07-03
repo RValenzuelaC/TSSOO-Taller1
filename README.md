@@ -1,2 +1,4 @@
 # TSSOO-Taller1
-Taller_1_Tsso
+**1. Diseño de la solución**
+
+**2.**
